@@ -356,7 +356,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 21);
             this.comboBox1.TabIndex = 17;
-            this.comboBox1.ValueMember = "Id";
+            this.comboBox1.ValueMember = "PESEL";
             // 
             // uczniowieBindingSource
             // 
@@ -373,7 +373,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(186, 21);
             this.comboBox2.TabIndex = 18;
-            this.comboBox2.ValueMember = "Id";
+            this.comboBox2.ValueMember = "Nazwisko";
             // 
             // nauczycieleBindingSource
             // 
@@ -390,7 +390,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(186, 21);
             this.comboBox3.TabIndex = 19;
-            this.comboBox3.ValueMember = "Id";
+            this.comboBox3.ValueMember = "Przedmiot";
             // 
             // przedmiotyBindingSource
             // 
@@ -407,7 +407,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(186, 21);
             this.comboBox4.TabIndex = 20;
-            this.comboBox4.ValueMember = "Id";
+            this.comboBox4.ValueMember = "Rodzaj pracy";
             // 
             // rodzajePracBindingSource
             // 

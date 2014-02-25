@@ -34,12 +34,12 @@
             System.Windows.Forms.Label nazwiskoLabel;
             System.Windows.Forms.Label pESELLabel;
             System.Windows.Forms.Label klasaLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Uczniowie));
             System.Windows.Forms.Label ulicaLabel;
             System.Windows.Forms.Label numer_domuLabel;
             System.Windows.Forms.Label numer_lokaluLabel;
             System.Windows.Forms.Label kod_pocztowyLabel;
             System.Windows.Forms.Label miejscowośćLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Uczniowie));
             this.uczniowieBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.uczniowieBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -130,6 +130,51 @@
             klasaLabel.Size = new System.Drawing.Size(36, 13);
             klasaLabel.TabIndex = 9;
             klasaLabel.Text = "Klasa:";
+            // 
+            // ulicaLabel
+            // 
+            ulicaLabel.AutoSize = true;
+            ulicaLabel.Location = new System.Drawing.Point(9, 135);
+            ulicaLabel.Name = "ulicaLabel";
+            ulicaLabel.Size = new System.Drawing.Size(34, 13);
+            ulicaLabel.TabIndex = 11;
+            ulicaLabel.Text = "Ulica:";
+            // 
+            // numer_domuLabel
+            // 
+            numer_domuLabel.AutoSize = true;
+            numer_domuLabel.Location = new System.Drawing.Point(9, 161);
+            numer_domuLabel.Name = "numer_domuLabel";
+            numer_domuLabel.Size = new System.Drawing.Size(70, 13);
+            numer_domuLabel.TabIndex = 13;
+            numer_domuLabel.Text = "Numer domu:";
+            // 
+            // numer_lokaluLabel
+            // 
+            numer_lokaluLabel.AutoSize = true;
+            numer_lokaluLabel.Location = new System.Drawing.Point(9, 187);
+            numer_lokaluLabel.Name = "numer_lokaluLabel";
+            numer_lokaluLabel.Size = new System.Drawing.Size(72, 13);
+            numer_lokaluLabel.TabIndex = 15;
+            numer_lokaluLabel.Text = "Numer lokalu:";
+            // 
+            // kod_pocztowyLabel
+            // 
+            kod_pocztowyLabel.AutoSize = true;
+            kod_pocztowyLabel.Location = new System.Drawing.Point(9, 213);
+            kod_pocztowyLabel.Name = "kod_pocztowyLabel";
+            kod_pocztowyLabel.Size = new System.Drawing.Size(77, 13);
+            kod_pocztowyLabel.TabIndex = 17;
+            kod_pocztowyLabel.Text = "Kod pocztowy:";
+            // 
+            // miejscowośćLabel
+            // 
+            miejscowośćLabel.AutoSize = true;
+            miejscowośćLabel.Location = new System.Drawing.Point(9, 239);
+            miejscowośćLabel.Name = "miejscowośćLabel";
+            miejscowośćLabel.Size = new System.Drawing.Size(71, 13);
+            miejscowośćLabel.TabIndex = 19;
+            miejscowośćLabel.Text = "Miejscowość:";
             // 
             // uczniowieBindingNavigator
             // 
@@ -325,7 +370,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 21);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.ValueMember = "Id";
+            this.comboBox1.ValueMember = "Klasa";
             // 
             // klasyBindingSource
             // 
@@ -336,15 +381,6 @@
             // 
             this.klasyTableAdapter.ClearBeforeFill = true;
             // 
-            // ulicaLabel
-            // 
-            ulicaLabel.AutoSize = true;
-            ulicaLabel.Location = new System.Drawing.Point(9, 135);
-            ulicaLabel.Name = "ulicaLabel";
-            ulicaLabel.Size = new System.Drawing.Size(34, 13);
-            ulicaLabel.TabIndex = 11;
-            ulicaLabel.Text = "Ulica:";
-            // 
             // ulicaTextBox
             // 
             this.ulicaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "Ulica", true));
@@ -352,15 +388,6 @@
             this.ulicaTextBox.Name = "ulicaTextBox";
             this.ulicaTextBox.Size = new System.Drawing.Size(189, 20);
             this.ulicaTextBox.TabIndex = 12;
-            // 
-            // numer_domuLabel
-            // 
-            numer_domuLabel.AutoSize = true;
-            numer_domuLabel.Location = new System.Drawing.Point(9, 161);
-            numer_domuLabel.Name = "numer_domuLabel";
-            numer_domuLabel.Size = new System.Drawing.Size(70, 13);
-            numer_domuLabel.TabIndex = 13;
-            numer_domuLabel.Text = "Numer domu:";
             // 
             // numer_domuTextBox
             // 
@@ -370,15 +397,6 @@
             this.numer_domuTextBox.Size = new System.Drawing.Size(189, 20);
             this.numer_domuTextBox.TabIndex = 14;
             // 
-            // numer_lokaluLabel
-            // 
-            numer_lokaluLabel.AutoSize = true;
-            numer_lokaluLabel.Location = new System.Drawing.Point(9, 187);
-            numer_lokaluLabel.Name = "numer_lokaluLabel";
-            numer_lokaluLabel.Size = new System.Drawing.Size(72, 13);
-            numer_lokaluLabel.TabIndex = 15;
-            numer_lokaluLabel.Text = "Numer lokalu:";
-            // 
             // numer_lokaluTextBox
             // 
             this.numer_lokaluTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "Numer lokalu", true));
@@ -387,15 +405,6 @@
             this.numer_lokaluTextBox.Size = new System.Drawing.Size(189, 20);
             this.numer_lokaluTextBox.TabIndex = 16;
             // 
-            // kod_pocztowyLabel
-            // 
-            kod_pocztowyLabel.AutoSize = true;
-            kod_pocztowyLabel.Location = new System.Drawing.Point(9, 213);
-            kod_pocztowyLabel.Name = "kod_pocztowyLabel";
-            kod_pocztowyLabel.Size = new System.Drawing.Size(77, 13);
-            kod_pocztowyLabel.TabIndex = 17;
-            kod_pocztowyLabel.Text = "Kod pocztowy:";
-            // 
             // kod_pocztowyTextBox
             // 
             this.kod_pocztowyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "Kod pocztowy", true));
@@ -403,15 +412,6 @@
             this.kod_pocztowyTextBox.Name = "kod_pocztowyTextBox";
             this.kod_pocztowyTextBox.Size = new System.Drawing.Size(189, 20);
             this.kod_pocztowyTextBox.TabIndex = 18;
-            // 
-            // miejscowośćLabel
-            // 
-            miejscowośćLabel.AutoSize = true;
-            miejscowośćLabel.Location = new System.Drawing.Point(9, 239);
-            miejscowośćLabel.Name = "miejscowośćLabel";
-            miejscowośćLabel.Size = new System.Drawing.Size(71, 13);
-            miejscowośćLabel.TabIndex = 19;
-            miejscowośćLabel.Text = "Miejscowość:";
             // 
             // miejscowośćTextBox
             // 

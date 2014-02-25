@@ -49,8 +49,8 @@
             this.klasyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.klasyDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasyBindingNavigator)).BeginInit();
@@ -224,8 +224,8 @@
             this.klasyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.klasyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn2});
             this.klasyDataGridView.DataSource = this.klasyBindingSource;
             this.klasyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.klasyDataGridView.Location = new System.Drawing.Point(0, 25);
@@ -242,19 +242,19 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Wychowawca";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Wychowawca";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Klasa";
             this.dataGridViewTextBoxColumn3.HeaderText = "Klasa";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Wychowawca";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Wychowawca";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Klasy
             // 
@@ -301,7 +301,7 @@
         private System.Windows.Forms.ToolStripButton klasyBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView klasyDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
