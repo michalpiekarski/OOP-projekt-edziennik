@@ -157,7 +157,7 @@ namespace Dziennik_elektroniczny
                     this.Location = new Point(300, 200);
                     break;
                 case 1:
-                    this.Location = new Point(150, 200);
+                    this.Location = new Point(100, 200);
                     break;
                 default:
                     break;
