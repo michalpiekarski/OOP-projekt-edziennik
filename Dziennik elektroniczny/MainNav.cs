@@ -148,5 +148,20 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Inne.Rodzaje_prac(this).Show();
             }
         }
+
+        private void DostosujPozycję(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    this.Location = new Point(300, 200);
+                    break;
+                case 1:
+                    this.Location = new Point(150, 200);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
