@@ -38,7 +38,7 @@ namespace Dziennik_elektroniczny
             this.uczniowieTableAdapter.Fill(this.bazaDanychDataSet.Uczniowie);
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Karty_ocen' table. You can move, or remove it, as needed.
             this.karty_ocenTableAdapter.Fill(this.bazaDanychDataSet.Karty_ocen);
-
+            this.karty_ocenBindingSource.Position = Math.Max(0, this.karty_ocenBindingSource.Count - 1);
         }
 
         private void Closed(object sender, FormClosedEventArgs e)

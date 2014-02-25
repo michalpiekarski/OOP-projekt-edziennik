@@ -30,7 +30,7 @@ namespace Dziennik_elektroniczny
         {
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Nauczyciele' table. You can move, or remove it, as needed.
             this.nauczycieleTableAdapter.Fill(this.bazaDanychDataSet.Nauczyciele);
-
+            this.nauczycieleBindingSource.Position = Math.Max(0, this.nauczycieleBindingSource.Count - 1);
         }
 
         private void Closed(object sender, FormClosedEventArgs e)
