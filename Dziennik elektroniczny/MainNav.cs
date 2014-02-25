@@ -12,133 +12,140 @@ namespace Dziennik_elektroniczny
 {
     public partial class MainNav : Form
     {
-        private CurrentSubForm currentSubForm = CurrentSubForm.None;
+        public bool[] currentSubForm = new bool[20];
 
         public MainNav()
         {
             InitializeComponent();
+            for (int i = 0; i < 20; i++)
+            {
+                currentSubForm[i] = false;
+            }
         }
 
         private void UczniowieWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.UczniowieWprowadzanie)
+            if (!currentSubForm[(int)CurrentSubForm.UczniowieWprowadzanie])
             {
-                currentSubForm = CurrentSubForm.UczniowieWprowadzanie;
-                new Uczniowie().Show();
+                currentSubForm[(int)CurrentSubForm.UczniowieWprowadzanie] = true;
+                new Uczniowie(this).Show();
             }
         }
 
         private void NauczycieleWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.NauczycieleWprowadzanie)
+            if (!currentSubForm[(int)CurrentSubForm.NauczycieleWprowadzanie])
             {
-                currentSubForm = CurrentSubForm.NauczycieleWprowadzanie;
-                new Nauczyciele().Show();
+                currentSubForm[(int)CurrentSubForm.NauczycieleWprowadzanie] = true;
+                new Nauczyciele(this).Show();
             }
         }
 
         private void PlanZajęćWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PlanZajęćWprowadzanie)
+            if (!currentSubForm[(int)CurrentSubForm.PlanZajęćWprowadzanie])
             {
-                currentSubForm = CurrentSubForm.PlanZajęćWprowadzanie;
-                new Plan_zajęć().Show();
+                currentSubForm[(int)CurrentSubForm.PlanZajęćWprowadzanie] = true;
+                new Plan_zajęć(this).Show();
             }
         }
 
         private void KartyOcenWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KartyOcenWprowadzanie)
+            if (!currentSubForm[(int)CurrentSubForm.KartyOcenWprowadzanie])
             {
-                currentSubForm = CurrentSubForm.KartyOcenWprowadzanie;
-                new Karty_ocen().Show();
+                currentSubForm[(int)CurrentSubForm.KartyOcenWprowadzanie] = true;
+                new Karty_ocen(this).Show();
             }
         }
 
         private void KlasyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KlasyWprowadzanie)
+            if (!currentSubForm[(int)CurrentSubForm.KlasyWprowadzanie])
             {
-                currentSubForm = CurrentSubForm.KlasyWprowadzanie;
-                new Klasy().Show();
+                currentSubForm[(int)CurrentSubForm.KlasyWprowadzanie] = true;
+                new Klasy(this).Show();
             }
         }
 
         private void PrzedmiotyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PrzedmiotyWprowadzanie)
+            if (!currentSubForm[(int)CurrentSubForm.PrzedmiotyWprowadzanie])
             {
-                currentSubForm = CurrentSubForm.PrzedmiotyWprowadzanie;
-                new Przedmioty().Show();
+                currentSubForm[(int)CurrentSubForm.PrzedmiotyWprowadzanie] = true;
+                new Przedmioty(this).Show();
             }
         }
 
         private void RodzajePracWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.RodzajePracWprowadzanie)
+            if (!currentSubForm[(int)CurrentSubForm.RodzajePracWprowadzanie])
             {
-                currentSubForm = CurrentSubForm.RodzajePracWprowadzanie;
-                new Rodzaje_prac().Show();
+                currentSubForm[(int)CurrentSubForm.RodzajePracWprowadzanie] = true;
+                new Rodzaje_prac(this).Show();
             }
         }
 
         private void UczniowiePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.UczniowiePrzeglądanie)
+            if (!currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie])
             {
-                currentSubForm = CurrentSubForm.UczniowiePrzeglądanie;
-                new Formularze.Przeglądanie.Kontakty.Uczniowie().Show();
+                currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie] = true;
+                new Formularze.Przeglądanie.Kontakty.Uczniowie(this).Show();
             }
         }
 
         private void NauczycielePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.NauczycielePrzeglądanie)
+            if (!currentSubForm[(int)CurrentSubForm.NauczycielePrzeglądanie])
             {
-                currentSubForm = CurrentSubForm.NauczycielePrzeglądanie;
-                new Formularze.Przeglądanie.Kontakty.Nauczyciele().Show();
+                currentSubForm[(int)CurrentSubForm.NauczycielePrzeglądanie] = true;
+                new Formularze.Przeglądanie.Kontakty.Nauczyciele(this).Show();
             }
         }
 
         private void PlanZajęćPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PlanZajęćPrzeglądanie)
+            if (!currentSubForm[(int)CurrentSubForm.PlanZajęćPrzeglądanie])
             {
-                currentSubForm = CurrentSubForm.PlanZajęćPrzeglądanie;
-                new Formularze.Przeglądanie.Terminy.Plan_zajęć().Show();
+                currentSubForm[(int)CurrentSubForm.PlanZajęćPrzeglądanie] = true;
+                new Formularze.Przeglądanie.Terminy.Plan_zajęć(this).Show();
             }
         }
 
         private void KartyOcenPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KartyOcenPrzeglądanie)
+            if (!currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie])
             {
-                currentSubForm = CurrentSubForm.KartyOcenPrzeglądanie;
-                new Formularze.Przeglądanie.Oceny.Karty_ocen().Show();
+                currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie] = true;
+                new Formularze.Przeglądanie.Oceny.Karty_ocen(this).Show();
             }
         }
 
         private void KlasyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KlasyPrzeglądanie)
+            if (!currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie])
             {
-                new Formularze.Przeglądanie.Inne.Klasy().Show();
+                currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie] = true;
+                new Formularze.Przeglądanie.Inne.Klasy(this).Show();
             }
         }
 
         private void PrzedmiotyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PrzedmiotyPrzeglądanie)
+            if (!currentSubForm[(int)CurrentSubForm.PrzedmiotyPrzeglądanie])
             {
-                new Formularze.Przeglądanie.Inne.Przedmioty().Show();
+                currentSubForm[(int)CurrentSubForm.PrzedmiotyPrzeglądanie] = true;
+                new Formularze.Przeglądanie.Inne.Przedmioty(this).Show();
             }
         }
 
         private void RodzajePracPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.RodzajePracPrzeglądanie)
+            if (!currentSubForm[(int)CurrentSubForm.RodzajePracPrzeglądanie])
             {
-                new Formularze.Przeglądanie.Inne.Rodzaje_prac().Show();
+                currentSubForm[(int)CurrentSubForm.RodzajePracPrzeglądanie] = true;
+                new Formularze.Przeglądanie.Inne.Rodzaje_prac(this).Show();
             }
         }
     }

@@ -12,8 +12,14 @@ namespace Dziennik_elektroniczny
 {
     public partial class Uczniowie : Form
     {
+        MainNav main;
         public Uczniowie()
         {
+            InitializeComponent();
+        }
+        public Uczniowie(MainNav mn)
+        {
+            main = mn;
             InitializeComponent();
         }
 
@@ -48,6 +54,11 @@ namespace Dziennik_elektroniczny
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Uczniowie' table. You can move, or remove it, as needed.
             this.uczniowieTableAdapter.Fill(this.bazaDanychDataSet.Uczniowie);
             this.uczniowieBindingSource.Position = Math.Max(0, this.uczniowieBindingSource.Count - 1);
+        }
+
+        private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
+        {
+            main.currentSubForm[(int)CurrentSubForm.UczniowieWprowadzanie] = false;
         }
     }
 }

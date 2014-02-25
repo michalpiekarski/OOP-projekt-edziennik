@@ -12,8 +12,14 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
 {
     public partial class Przedmioty : Form
     {
+        MainNav main;
         public Przedmioty()
         {
+            InitializeComponent();
+        }
+        public Przedmioty(MainNav mn)
+        {
+            main = mn;
             InitializeComponent();
         }
 
@@ -30,6 +36,11 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Przedmioty' table. You can move, or remove it, as needed.
             this.przedmiotyTableAdapter.Fill(this.bazaDanychDataSet.Przedmioty);
 
+        }
+
+        private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
+        {
+            main.currentSubForm[(int)CurrentSubForm.PrzedmiotyPrzeglądanie] = false;
         }
     }
 }

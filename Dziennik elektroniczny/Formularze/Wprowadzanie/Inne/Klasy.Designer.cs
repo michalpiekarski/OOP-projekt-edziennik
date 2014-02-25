@@ -297,6 +297,7 @@
             this.Name = "Klasy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Klasy";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SygnalizujZamknięcie);
             this.Load += new System.EventHandler(this.Klasy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasyBindingSource)).EndInit();

@@ -12,8 +12,14 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
 {
     public partial class Rodzaje_prac : Form
     {
+        MainNav main;
         public Rodzaje_prac()
         {
+            InitializeComponent();
+        }
+        public Rodzaje_prac(MainNav mn)
+        {
+            main = mn;
             InitializeComponent();
         }
 
@@ -30,6 +36,11 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Rodzaje_prac' table. You can move, or remove it, as needed.
             this.rodzaje_pracTableAdapter.Fill(this.bazaDanychDataSet.Rodzaje_prac);
 
+        }
+
+        private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
+        {
+            main.currentSubForm[(int)CurrentSubForm.RodzajePracPrzeglądanie] = false;
         }
     }
 }

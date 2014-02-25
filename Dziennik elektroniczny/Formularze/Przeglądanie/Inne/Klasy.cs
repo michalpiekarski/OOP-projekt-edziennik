@@ -12,8 +12,14 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
 {
     public partial class Klasy : Form
     {
+        MainNav main;
         public Klasy()
         {
+            InitializeComponent();
+        }
+        public Klasy(MainNav mn)
+        {
+            main = mn;
             InitializeComponent();
         }
 
@@ -30,6 +36,11 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Klasy' table. You can move, or remove it, as needed.
             this.klasyTableAdapter.Fill(this.bazaDanychDataSet.Klasy);
 
+        }
+
+        private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
+        {
+            main.currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie] = false;
         }
     }
 }

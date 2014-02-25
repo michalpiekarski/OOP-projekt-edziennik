@@ -281,6 +281,7 @@
             this.Name = "Nauczyciele";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nauczyciele";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SygnalizujZamknięcie);
             this.Load += new System.EventHandler(this.Nauczyciele_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nauczycieleBindingSource)).EndInit();

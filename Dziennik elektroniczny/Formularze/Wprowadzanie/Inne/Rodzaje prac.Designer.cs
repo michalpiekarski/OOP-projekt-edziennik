@@ -259,6 +259,7 @@
             this.Name = "Rodzaje_prac";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rodzaje prac";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SygnalizujZamknięcie);
             this.Load += new System.EventHandler(this.Rodzaje_zajęć_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rodzaje_pracBindingSource)).EndInit();

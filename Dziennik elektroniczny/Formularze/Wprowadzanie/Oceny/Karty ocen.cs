@@ -12,8 +12,14 @@ namespace Dziennik_elektroniczny
 {
     public partial class Karty_ocen : Form
     {
+        MainNav main;
         public Karty_ocen()
         {
+            InitializeComponent();
+        }
+        public Karty_ocen(MainNav mn)
+        {
+            main = mn;
             InitializeComponent();
         }
 
@@ -38,6 +44,11 @@ namespace Dziennik_elektroniczny
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Karty_ocen' table. You can move, or remove it, as needed.
             this.karty_ocenTableAdapter.Fill(this.bazaDanychDataSet.Karty_ocen);
             this.karty_ocenBindingSource.Position = Math.Max(0, this.karty_ocenBindingSource.Count - 1);
+        }
+
+        private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
+        {
+            main.currentSubForm[(int)CurrentSubForm.KartyOcenWprowadzanie] = false;
         }
     }
 }

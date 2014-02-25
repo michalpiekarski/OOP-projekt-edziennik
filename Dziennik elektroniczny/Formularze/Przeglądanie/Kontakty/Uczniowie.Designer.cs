@@ -330,6 +330,7 @@
             this.Name = "Uczniowie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uczniowie";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SygnalizujZamknięcie);
             this.Load += new System.EventHandler(this.Uczniowie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uczniowieBindingSource)).EndInit();

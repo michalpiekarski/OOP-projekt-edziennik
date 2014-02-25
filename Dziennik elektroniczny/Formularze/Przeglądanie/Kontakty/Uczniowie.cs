@@ -12,8 +12,14 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
 {
     public partial class Uczniowie : Form
     {
+        MainNav main;
         public Uczniowie()
         {
+            InitializeComponent();
+        }
+        public Uczniowie(MainNav mn)
+        {
+            main = mn;
             InitializeComponent();
         }
 
@@ -30,6 +36,11 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Uczniowie' table. You can move, or remove it, as needed.
             this.uczniowieTableAdapter.Fill(this.bazaDanychDataSet.Uczniowie);
 
+        }
+
+        private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
+        {
+            main.currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie] = false;
         }
     }
 }

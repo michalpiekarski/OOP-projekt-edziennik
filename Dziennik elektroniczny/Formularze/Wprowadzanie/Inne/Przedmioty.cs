@@ -12,8 +12,14 @@ namespace Dziennik_elektroniczny
 {
     public partial class Przedmioty : Form
     {
+        MainNav main;
         public Przedmioty()
         {
+            InitializeComponent();
+        }
+        public Przedmioty(MainNav mn)
+        {
+            main = mn;
             InitializeComponent();
         }
 
@@ -30,6 +36,11 @@ namespace Dziennik_elektroniczny
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Przedmioty' table. You can move, or remove it, as needed.
             this.przedmiotyTableAdapter.Fill(this.bazaDanychDataSet.Przedmioty);
             this.przedmiotyBindingSource.Position = Math.Max(0, this.przedmiotyBindingSource.Count - 1);
+        }
+
+        private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
+        {
+            main.currentSubForm[(int)CurrentSubForm.PrzedmiotyWprowadzanie] = false;
         }
     }
 }
