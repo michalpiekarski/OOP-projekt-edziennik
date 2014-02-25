@@ -39,6 +39,5 @@ namespace Dziennik_elektroniczny
             this.karty_ocenTableAdapter.Fill(this.bazaDanychDataSet.Karty_ocen);
             this.karty_ocenBindingSource.Position = Math.Max(0, this.karty_ocenBindingSource.Count - 1);
         }
-        }
     }
 }
