@@ -12,20 +12,7 @@ namespace Dziennik_elektroniczny
 {
     public partial class MainNav : Form
     {
-        public Uczniowie uczniowieWprowadzanie;
-        public Nauczyciele nauczycieleWprowadzanie;
-        public Plan_zajęć planZajęćWprowadzanie;
-        public Karty_ocen kartyOcenWprowadzanie;
-        public Klasy klasyWprowadzanie;
-        public Przedmioty przedmiotyWprowadzanie;
-        public Rodzaje_prac rodzajePracWprowadaznie;
-        public Formularze.Przeglądanie.Kontakty.Uczniowie uczniowiePrzeglądanie;
-        public Formularze.Przeglądanie.Kontakty.Nauczyciele nauczycielePrzeglądanie;
-        public Formularze.Przeglądanie.Terminy.Plan_zajęć planZajęćPrzeglądanie;
-        public Formularze.Przeglądanie.Oceny.Karty_ocen kartyOcenPrzeglądanie;
-        public Formularze.Przeglądanie.Inne.Klasy klasyPrzeglądanie;
-        public Formularze.Przeglądanie.Inne.Przedmioty przedmiotyPrzeglądanie;
-        public Formularze.Przeglądanie.Inne.Rodzaje_prac rodzajePracPrzeglądanie;
+        private CurrentSubForm currentSubForm = CurrentSubForm.None;
 
         public MainNav()
         {
@@ -34,141 +21,124 @@ namespace Dziennik_elektroniczny
 
         private void UczniowieWprowadzanieClick(object sender, EventArgs e)
         {
-            if (uczniowieWprowadzanie == null)
+            if (currentSubForm != CurrentSubForm.UczniowieWprowadzanie)
             {
-                uczniowieWprowadzanie = new Uczniowie();
-                uczniowieWprowadzanie.Show();
-                uczniowieWprowadzanie.parentRef = this;
+                currentSubForm = CurrentSubForm.UczniowieWprowadzanie;
+                new Uczniowie().Show();
             }
         }
 
         private void NauczycieleWprowadzanieClick(object sender, EventArgs e)
         {
-            if (nauczycieleWprowadzanie == null)
+            if (currentSubForm != CurrentSubForm.NauczycieleWprowadzanie)
             {
-                nauczycieleWprowadzanie = new Nauczyciele();
-                nauczycieleWprowadzanie.Show();
-                nauczycieleWprowadzanie.parentRef = this;
+                currentSubForm = CurrentSubForm.NauczycieleWprowadzanie;
+                new Nauczyciele().Show();
             }
         }
 
         private void PlanZajęćWprowadzanieClick(object sender, EventArgs e)
         {
-            if (planZajęćWprowadzanie == null)
+            if (currentSubForm != CurrentSubForm.PlanZajęćWprowadzanie)
             {
-                planZajęćWprowadzanie = new Plan_zajęć();
-                planZajęćWprowadzanie.Show();
-                planZajęćWprowadzanie.parentRef = this;
+                currentSubForm = CurrentSubForm.PlanZajęćWprowadzanie;
+                new Plan_zajęć().Show();
             }
         }
 
         private void KartyOcenWprowadzanieClick(object sender, EventArgs e)
         {
-            if (kartyOcenWprowadzanie == null)
+            if (currentSubForm != CurrentSubForm.KartyOcenWprowadzanie)
             {
-                kartyOcenWprowadzanie = new Karty_ocen();
-                kartyOcenWprowadzanie.Show();
-                kartyOcenWprowadzanie.parentRef = this;
+                currentSubForm = CurrentSubForm.KartyOcenWprowadzanie;
+                new Karty_ocen().Show();
             }
         }
 
         private void KlasyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (klasyWprowadzanie == null)
+            if (currentSubForm != CurrentSubForm.KlasyWprowadzanie)
             {
-                klasyWprowadzanie = new Klasy();
-                klasyWprowadzanie.Show();
-                klasyWprowadzanie.parentRef = this;
+                currentSubForm = CurrentSubForm.KlasyWprowadzanie;
+                new Klasy().Show();
             }
         }
 
         private void PrzedmiotyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (przedmiotyWprowadzanie == null)
+            if (currentSubForm != CurrentSubForm.PrzedmiotyWprowadzanie)
             {
-                przedmiotyWprowadzanie = new Przedmioty();
-                przedmiotyWprowadzanie.Show();
-                przedmiotyWprowadzanie.parentRef = this;
+                currentSubForm = CurrentSubForm.PrzedmiotyWprowadzanie;
+                new Przedmioty().Show();
             }
         }
 
         private void RodzajePracWprowadzanieClick(object sender, EventArgs e)
         {
-            if (rodzajePracWprowadaznie == null)
+            if (currentSubForm != CurrentSubForm.RodzajePracWprowadzanie)
             {
-                rodzajePracWprowadaznie = new Rodzaje_prac();
-                rodzajePracWprowadaznie.Show();
-                rodzajePracWprowadaznie.parentRef = this;
+                currentSubForm = CurrentSubForm.RodzajePracWprowadzanie;
+                new Rodzaje_prac().Show();
             }
         }
 
         private void UczniowiePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (uczniowiePrzeglądanie == null)
+            if (currentSubForm != CurrentSubForm.UczniowiePrzeglądanie)
             {
-                uczniowiePrzeglądanie = new Formularze.Przeglądanie.Kontakty.Uczniowie();
-                uczniowiePrzeglądanie.Show();
-                uczniowiePrzeglądanie.parentRef = this;
+                currentSubForm = CurrentSubForm.UczniowiePrzeglądanie;
+                new Formularze.Przeglądanie.Kontakty.Uczniowie().Show();
             }
         }
 
         private void NauczycielePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (nauczycielePrzeglądanie == null)
+            if (currentSubForm != CurrentSubForm.NauczycielePrzeglądanie)
             {
-                nauczycielePrzeglądanie = new Formularze.Przeglądanie.Kontakty.Nauczyciele();
-                nauczycielePrzeglądanie.Show();
-                nauczycielePrzeglądanie.parentRef = this;
+                currentSubForm = CurrentSubForm.NauczycielePrzeglądanie;
+                new Formularze.Przeglądanie.Kontakty.Nauczyciele().Show();
             }
         }
 
         private void PlanZajęćPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (planZajęćPrzeglądanie == null)
+            if (currentSubForm != CurrentSubForm.PlanZajęćPrzeglądanie)
             {
-                planZajęćPrzeglądanie = new Formularze.Przeglądanie.Terminy.Plan_zajęć();
-                planZajęćPrzeglądanie.Show();
-                planZajęćPrzeglądanie.parentRef = this;
+                currentSubForm = CurrentSubForm.PlanZajęćPrzeglądanie;
+                new Formularze.Przeglądanie.Terminy.Plan_zajęć().Show();
             }
         }
 
         private void KartyOcenPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (kartyOcenPrzeglądanie == null)
+            if (currentSubForm != CurrentSubForm.KartyOcenPrzeglądanie)
             {
-                kartyOcenPrzeglądanie = new Formularze.Przeglądanie.Oceny.Karty_ocen();
-                kartyOcenPrzeglądanie.Show();
-                kartyOcenPrzeglądanie.parentRef = this;
+                currentSubForm = CurrentSubForm.KartyOcenPrzeglądanie;
+                new Formularze.Przeglądanie.Oceny.Karty_ocen().Show();
             }
         }
 
         private void KlasyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (klasyPrzeglądanie == null)
+            if (currentSubForm != CurrentSubForm.KlasyPrzeglądanie)
             {
-                klasyPrzeglądanie = new Formularze.Przeglądanie.Inne.Klasy();
-                klasyPrzeglądanie.Show();
-                klasyPrzeglądanie.parentRef = this;
+                new Formularze.Przeglądanie.Inne.Klasy().Show();
             }
         }
 
         private void PrzedmiotyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (przedmiotyPrzeglądanie == null)
+            if (currentSubForm != CurrentSubForm.PrzedmiotyPrzeglądanie)
             {
-                przedmiotyPrzeglądanie = new Formularze.Przeglądanie.Inne.Przedmioty();
-                przedmiotyPrzeglądanie.Show();
-                przedmiotyPrzeglądanie.parentRef = this;
+                new Formularze.Przeglądanie.Inne.Przedmioty().Show();
             }
         }
 
         private void RodzajePracPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (rodzajePracPrzeglądanie == null)
+            if (currentSubForm != CurrentSubForm.RodzajePracPrzeglądanie)
             {
-                rodzajePracPrzeglądanie = new Formularze.Przeglądanie.Inne.Rodzaje_prac();
-                rodzajePracPrzeglądanie.Show();
-                rodzajePracPrzeglądanie.parentRef = this;
+                new Formularze.Przeglądanie.Inne.Rodzaje_prac().Show();
             }
         }
     }

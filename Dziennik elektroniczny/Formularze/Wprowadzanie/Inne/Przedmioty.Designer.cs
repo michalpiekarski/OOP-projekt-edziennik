@@ -259,7 +259,6 @@
             this.Name = "Przedmioty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Przedmioty";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Closed);
             this.Load += new System.EventHandler(this.Przedmioty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.przedmiotyBindingSource)).EndInit();

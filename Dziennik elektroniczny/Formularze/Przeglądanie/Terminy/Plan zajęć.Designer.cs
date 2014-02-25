@@ -312,7 +312,6 @@
             this.Name = "Plan_zajęć";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plan_zajęć";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Closed);
             this.Load += new System.EventHandler(this.Plan_zajęć_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plan_zajęćBindingSource)).EndInit();

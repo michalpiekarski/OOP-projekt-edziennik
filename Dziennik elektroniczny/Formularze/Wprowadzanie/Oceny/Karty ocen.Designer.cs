@@ -456,7 +456,6 @@
             this.Name = "Karty_ocen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Karty_ocen";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Closed);
             this.Load += new System.EventHandler(this.Karty_ocen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazaDanychDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.karty_ocenBindingSource)).EndInit();

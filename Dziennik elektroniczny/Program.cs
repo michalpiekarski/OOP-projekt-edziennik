@@ -6,6 +6,24 @@ using System.Windows.Forms;
 
 namespace Dziennik_elektroniczny
 {
+    public enum CurrentSubForm
+    {
+        None = -1,
+        UczniowieWprowadzanie,
+        NauczycieleWprowadzanie,
+        PlanZajęćWprowadzanie,
+        KartyOcenWprowadzanie,
+        KlasyWprowadzanie,
+        PrzedmiotyWprowadzanie,
+        RodzajePracWprowadzanie,
+        UczniowiePrzeglądanie,
+        NauczycielePrzeglądanie,
+        PlanZajęćPrzeglądanie,
+        KartyOcenPrzeglądanie,
+        KlasyPrzeglądanie,
+        PrzedmiotyPrzeglądanie,
+        RodzajePracPrzeglądanie
+    }
     static class Program
     {
         /// <summary>

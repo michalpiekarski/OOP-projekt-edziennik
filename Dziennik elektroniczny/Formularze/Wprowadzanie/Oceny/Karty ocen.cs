@@ -12,7 +12,6 @@ namespace Dziennik_elektroniczny
 {
     public partial class Karty_ocen : Form
     {
-        public MainNav parentRef;
         public Karty_ocen()
         {
             InitializeComponent();
@@ -40,10 +39,6 @@ namespace Dziennik_elektroniczny
             this.karty_ocenTableAdapter.Fill(this.bazaDanychDataSet.Karty_ocen);
             this.karty_ocenBindingSource.Position = Math.Max(0, this.karty_ocenBindingSource.Count - 1);
         }
-
-        private void Closed(object sender, FormClosedEventArgs e)
-        {
-            parentRef.kartyOcenWprowadzanie = null;
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
 {
     public partial class Nauczyciele : Form
     {
-        public MainNav parentRef;
         public Nauczyciele()
         {
             InitializeComponent();
@@ -31,11 +30,6 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Nauczyciele' table. You can move, or remove it, as needed.
             this.nauczycieleTableAdapter.Fill(this.bazaDanychDataSet.Nauczyciele);
 
-        }
-
-        private void Closed(object sender, FormClosedEventArgs e)
-        {
-            parentRef.nauczycielePrzeglądanie = null;
         }
     }
 }

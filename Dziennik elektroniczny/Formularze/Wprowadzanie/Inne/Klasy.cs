@@ -12,8 +12,6 @@ namespace Dziennik_elektroniczny
 {
     public partial class Klasy : Form
     {
-        public MainNav parentRef;
-
         public Klasy()
         {
             InitializeComponent();
@@ -34,11 +32,6 @@ namespace Dziennik_elektroniczny
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Klasy' table. You can move, or remove it, as needed.
             this.klasyTableAdapter.Fill(this.bazaDanychDataSet.Klasy);
             this.klasyBindingSource.Position = Math.Max(0, this.klasyBindingSource.Count - 1);
-        }
-
-        private void Closed(object sender, FormClosedEventArgs e)
-        {
-            parentRef.klasyWprowadzanie = null;
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Terminy
 {
     public partial class Plan_zajęć : Form
     {
-        public MainNav parentRef;
         public Plan_zajęć()
         {
             InitializeComponent();
@@ -31,11 +30,6 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Terminy
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Plan_zajęć' table. You can move, or remove it, as needed.
             this.plan_zajęćTableAdapter.Fill(this.bazaDanychDataSet.Plan_zajęć);
 
-        }
-
-        private void Closed(object sender, FormClosedEventArgs e)
-        {
-            parentRef.planZajęćPrzeglądanie = null;
         }
     }
 }

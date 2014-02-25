@@ -451,7 +451,6 @@
             this.Name = "Uczniowie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uczniowie";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Closed);
             this.Load += new System.EventHandler(this.Uczniowie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uczniowieBindingNavigator)).EndInit();
             this.uczniowieBindingNavigator.ResumeLayout(false);

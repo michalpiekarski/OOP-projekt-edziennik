@@ -12,7 +12,6 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
 {
     public partial class Karty_ocen : Form
     {
-        public MainNav parentRef;
         public Karty_ocen()
         {
             InitializeComponent();
@@ -31,11 +30,6 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
             // TODO: This line of code loads data into the 'bazaDanychDataSet.Karty_ocen' table. You can move, or remove it, as needed.
             this.karty_ocenTableAdapter.Fill(this.bazaDanychDataSet.Karty_ocen);
 
-        }
-
-        private void Closed(object sender, FormClosedEventArgs e)
-        {
-            parentRef.kartyOcenPrzeglądanie = null;
         }
     }
 }
