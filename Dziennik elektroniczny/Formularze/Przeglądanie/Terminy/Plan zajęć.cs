@@ -50,7 +50,7 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Terminy
             }
             else if(filterString == "Rozpoczęcie" || filterString == "Zakończenie")
             {
-                /// TODO: Zdecydować o zachowaniu w praypadku podjęcia próby filtrowania z użyciem dat
+                /// UNDONE: Zdecydować o zachowaniu w praypadku podjęcia próby filtrowania z użyciem dat
             }
             else
             {
@@ -61,8 +61,8 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Terminy
 
         private void ResetujFiltr(object sender, EventArgs e)
         {
-            filterBy.SelectedIndex = -1;
             filterValue.Text = "";
+            filterBy.SelectedIndex = -1;
             this.plan_zajęćBindingSource.RemoveFilter();
         }
     }

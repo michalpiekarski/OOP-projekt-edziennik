@@ -58,8 +58,8 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
 
         private void ResetujFiltr(object sender, EventArgs e)
         {
-            filterBy.SelectedIndex = -1;
             filterValue.Text = "";
+            filterBy.SelectedIndex = -1;
             this.rodzaje_pracBindingSource.RemoveFilter();
         }
     }

@@ -54,7 +54,7 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
             }
             else if(filterString == "Data")
             {
-                /// TODO: Zdecydować nad zachowaniem w przypadku podjęcia próby filtrowania po dacie
+                // UNDONE: Zdecydować nad zachowaniem w przypadku podjęcia próby filtrowania po dacie
             }
             else
             {
@@ -65,8 +65,8 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
 
         private void ResetujFiltr(object sender, EventArgs e)
         {
-            filterBy.SelectedIndex = -1;
             filterValue.Text = "";
+            filterBy.SelectedIndex = -1;
             this.karty_ocenBindingSource.RemoveFilter();
         }
     }
