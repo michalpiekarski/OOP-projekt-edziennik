@@ -51,6 +51,7 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
             }
             else
             {
+                filterString = "[" + filterString + "]";
                 filterString += " like '" + filterValue.Text + "'";
             }
             this.rodzaje_pracBindingSource.Filter = filterString;

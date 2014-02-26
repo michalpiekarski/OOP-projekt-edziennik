@@ -58,6 +58,10 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
             }
             else
             {
+                if(filterString == "Rodzaj pracy")
+                {
+                    filterString = "[" + filterString + "]";
+                }
                 filterString += " like '" + filterValue.Text + "'";
             }
             this.karty_ocenBindingSource.Filter = filterString;

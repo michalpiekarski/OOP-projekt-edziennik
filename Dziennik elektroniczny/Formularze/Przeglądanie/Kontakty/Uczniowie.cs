@@ -51,6 +51,10 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
             }
             else
             {
+                if(filterString == "Numer domu" || filterString == "Numer lokalu" || filterString == "Kod pocztowy")
+                {
+                    filterString = "[" + filterString + "]";
+                }
                 filterString += " like '" + filterValue.Text + "'";
             }
             this.uczniowieBindingSource.Filter = filterString;
