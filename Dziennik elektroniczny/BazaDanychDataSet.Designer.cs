@@ -3757,12 +3757,19 @@ SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FROM " +
                 "dbo.[Karty ocen]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FROM " +
+                "dbo.[Karty ocen] WHERE @ParamWhere LIKE @ParamLike";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamWhere", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamLike", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3784,6 +3791,54 @@ SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FRO
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BazaDanychDataSet.Karty_ocenDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BazaDanychDataSet.Karty_ocenDataTable dataTable = new BazaDanychDataSet.Karty_ocenDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BazaDanychDataSet.Karty_ocenDataTable dataTable, string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BazaDanychDataSet.Karty_ocenDataTable GetDataBy(string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
             BazaDanychDataSet.Karty_ocenDataTable dataTable = new BazaDanychDataSet.Karty_ocenDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4200,11 +4255,17 @@ SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Klasa, Wychowawca FROM dbo.Klasy";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Klasa, Wychowawca FROM dbo.Klasy WHERE @ParamWhere LIKE @ParamLike";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamWhere", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamLike", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4226,6 +4287,54 @@ SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FRO
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BazaDanychDataSet.KlasyDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BazaDanychDataSet.KlasyDataTable dataTable = new BazaDanychDataSet.KlasyDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BazaDanychDataSet.KlasyDataTable dataTable, string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BazaDanychDataSet.KlasyDataTable GetDataBy(string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
             BazaDanychDataSet.KlasyDataTable dataTable = new BazaDanychDataSet.KlasyDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4550,11 +4659,17 @@ SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Imię, Nazwisko FROM dbo.Nauczyciele";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Imię, Nazwisko FROM dbo.Nauczyciele WHERE @ParamWhere LIKE @ParamLike";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamWhere", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamLike", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4576,6 +4691,54 @@ SELECT Id, Uczeń, Nauczyciel, Przedmiot, [Rodzaj pracy], Ocena, Data, Uwagi FRO
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BazaDanychDataSet.NauczycieleDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BazaDanychDataSet.NauczycieleDataTable dataTable = new BazaDanychDataSet.NauczycieleDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BazaDanychDataSet.NauczycieleDataTable dataTable, string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BazaDanychDataSet.NauczycieleDataTable GetDataBy(string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
             BazaDanychDataSet.NauczycieleDataTable dataTable = new BazaDanychDataSet.NauczycieleDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4920,12 +5083,19 @@ SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Tema
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Temat FR" +
                 "OM dbo.[Plan zajęć]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Temat FR" +
+                "OM dbo.[Plan zajęć] WHERE @ParamWhere LIKE @ParamLike";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamWhere", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamLike", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4947,6 +5117,54 @@ SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Tema
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BazaDanychDataSet.Plan_zajęćDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BazaDanychDataSet.Plan_zajęćDataTable dataTable = new BazaDanychDataSet.Plan_zajęćDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BazaDanychDataSet.Plan_zajęćDataTable dataTable, string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BazaDanychDataSet.Plan_zajęćDataTable GetDataBy(string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
             BazaDanychDataSet.Plan_zajęćDataTable dataTable = new BazaDanychDataSet.Plan_zajęćDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5333,11 +5551,17 @@ SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Tema
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Przedmiot FROM dbo.Przedmioty";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Przedmiot FROM dbo.Przedmioty WHERE @ParamWhere LIKE @ParamLike";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamWhere", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamLike", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5359,6 +5583,54 @@ SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Tema
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BazaDanychDataSet.PrzedmiotyDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BazaDanychDataSet.PrzedmiotyDataTable dataTable = new BazaDanychDataSet.PrzedmiotyDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BazaDanychDataSet.PrzedmiotyDataTable dataTable, string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BazaDanychDataSet.PrzedmiotyDataTable GetDataBy(string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
             BazaDanychDataSet.PrzedmiotyDataTable dataTable = new BazaDanychDataSet.PrzedmiotyDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5653,11 +5925,18 @@ SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Tema
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, [Rodzaj pracy] FROM dbo.[Rodzaje prac]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, [Rodzaj pracy] FROM dbo.[Rodzaje prac] WHERE @ParamWhere LIKE @ParamLi" +
+                "ke";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamWhere", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamLike", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5679,6 +5958,54 @@ SELECT Id, Klasa, Przedmiot, Sala, Prowadzący, Rozpoczęcie, Zakończenie, Tema
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BazaDanychDataSet.Rodzaje_pracDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BazaDanychDataSet.Rodzaje_pracDataTable dataTable = new BazaDanychDataSet.Rodzaje_pracDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BazaDanychDataSet.Rodzaje_pracDataTable dataTable, string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BazaDanychDataSet.Rodzaje_pracDataTable GetDataBy(string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
             BazaDanychDataSet.Rodzaje_pracDataTable dataTable = new BazaDanychDataSet.Rodzaje_pracDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6015,12 +6342,19 @@ SELECT Id, Imię, Nazwisko, PESEL, Ulica, [Numer domu], [Numer lokalu], [Kod poc
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Imię, Nazwisko, PESEL, Ulica, [Numer domu], [Numer lokalu], [Kod poczt" +
                 "owy], Miejscowość, Klasa FROM dbo.Uczniowie";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Imię, Nazwisko, PESEL, Ulica, [Numer domu], [Numer lokalu], [Kod poczt" +
+                "owy], Miejscowość, Klasa FROM dbo.Uczniowie WHERE @ParamWhere LIKE @ParamLike";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamWhere", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParamLike", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6042,6 +6376,54 @@ SELECT Id, Imię, Nazwisko, PESEL, Ulica, [Numer domu], [Numer lokalu], [Kod poc
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BazaDanychDataSet.UczniowieDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BazaDanychDataSet.UczniowieDataTable dataTable = new BazaDanychDataSet.UczniowieDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BazaDanychDataSet.UczniowieDataTable dataTable, string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BazaDanychDataSet.UczniowieDataTable GetDataBy(string ParamWhere, string ParamLike) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ParamWhere == null)) {
+                throw new global::System.ArgumentNullException("ParamWhere");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ParamWhere));
+            }
+            if ((ParamLike == null)) {
+                throw new global::System.ArgumentNullException("ParamLike");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ParamLike));
+            }
             BazaDanychDataSet.UczniowieDataTable dataTable = new BazaDanychDataSet.UczniowieDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
