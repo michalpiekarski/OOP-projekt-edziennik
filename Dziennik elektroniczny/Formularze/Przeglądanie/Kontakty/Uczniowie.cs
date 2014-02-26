@@ -42,5 +42,25 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
         {
             main.currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie] = false;
         }
+        private void FiltrujTabelę(object sender, EventArgs e)
+        {
+            string filterString = filterBy.Text;
+            if (filterString == "Id")
+            {
+                filterString += " = " + int.Parse(filterValue.Text);
+            }
+            else
+            {
+                filterString += " like '" + filterValue.Text + "'";
+            }
+            this.uczniowieBindingSource.Filter = filterString;
+        }
+
+        private void ResetujFiltr(object sender, EventArgs e)
+        {
+            filterBy.SelectedIndex = -1;
+            filterValue.Text = "";
+            this.uczniowieBindingSource.RemoveFilter();
+        }
     }
 }

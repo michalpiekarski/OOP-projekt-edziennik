@@ -41,5 +41,29 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Terminy
         {
             main.currentSubForm[(int)CurrentSubForm.PlanZajęćPrzeglądanie] = false;
         }
+        private void FiltrujTabelę(object sender, EventArgs e)
+        {
+            string filterString = filterBy.Text;
+            if (filterString == "Id")
+            {
+                filterString += " = " + int.Parse(filterValue.Text);
+            }
+            else if(filterString == "Rozpoczęcie" || filterString == "Zakończenie")
+            {
+                /// TODO: Zdecydować o zachowaniu w praypadku podjęcia próby filtrowania z użyciem dat
+            }
+            else
+            {
+                filterString += " like '" + filterValue.Text + "'";
+            }
+            this.plan_zajęćBindingSource.Filter = filterString;
+        }
+
+        private void ResetujFiltr(object sender, EventArgs e)
+        {
+            filterBy.SelectedIndex = -1;
+            filterValue.Text = "";
+            this.plan_zajęćBindingSource.RemoveFilter();
+        }
     }
 }

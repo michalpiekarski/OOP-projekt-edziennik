@@ -41,5 +41,33 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
         {
             main.currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie] = false;
         }
+        private void FiltrujTabelę(object sender, EventArgs e)
+        {
+            string filterString = filterBy.Text;
+            if (filterString == "Id")
+            {
+                filterString += " = " + int.Parse(filterValue.Text);
+            }
+            else if(filterString == "Ocena")
+            {
+                filterString += " = " + float.Parse(filterValue.Text);
+            }
+            else if(filterString == "Data")
+            {
+                /// TODO: Zdecydować nad zachowaniem w przypadku podjęcia próby filtrowania po dacie
+            }
+            else
+            {
+                filterString += " like '" + filterValue.Text + "'";
+            }
+            this.karty_ocenBindingSource.Filter = filterString;
+        }
+
+        private void ResetujFiltr(object sender, EventArgs e)
+        {
+            filterBy.SelectedIndex = -1;
+            filterValue.Text = "";
+            this.karty_ocenBindingSource.RemoveFilter();
+        }
     }
 }

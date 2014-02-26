@@ -42,5 +42,24 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
         {
             main.currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie] = false;
         }
+        private void FiltrujTabelę(object sender, EventArgs e)
+        {
+            string filterString = filterBy.Text;
+            if(filterString == "Id")
+            {
+                filterString += " = " + int.Parse(filterValue.Text);
+            } else
+            {
+                filterString += " like '" + filterValue.Text + "'";
+            }
+            this.klasyBindingSource.Filter = filterString;
+        }
+
+        private void ResetujFiltr(object sender, EventArgs e)
+        {
+            filterBy.SelectedIndex = -1;
+            filterValue.Text = "";
+            this.klasyBindingSource.RemoveFilter();
+        }
     }
 }
