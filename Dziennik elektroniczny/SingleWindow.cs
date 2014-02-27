@@ -259,5 +259,10 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm); 
             }
         }
+
+        private void OpenBW(object sender, EventArgs e)
+        {
+            new Formularze.backgroundWorker().Show();
+        }
     }
 }

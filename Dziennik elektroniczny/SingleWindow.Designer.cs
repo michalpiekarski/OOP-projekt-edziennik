@@ -366,6 +366,7 @@
             this.Name = "SingleWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SingleWindow";
+            this.Load += new System.EventHandler(this.OpenBW);
             this.tabControl1.ResumeLayout(false);
             this.Wprowadzanie.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

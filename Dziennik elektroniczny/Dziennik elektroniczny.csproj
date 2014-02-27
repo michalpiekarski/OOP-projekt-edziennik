@@ -64,6 +64,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BazaDanychDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularze\backgroundWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularze\backgroundWorker.Designer.cs">
+      <DependentUpon>backgroundWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularze\Przeglądanie\Inne\Klasy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <Compile Include="SingleWindow.Designer.cs">
       <DependentUpon>SingleWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularze\backgroundWorker.resx">
+      <DependentUpon>backgroundWorker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularze\Przeglądanie\Inne\Klasy.resx">
       <DependentUpon>Klasy.cs</DependentUpon>
     </EmbeddedResource>
