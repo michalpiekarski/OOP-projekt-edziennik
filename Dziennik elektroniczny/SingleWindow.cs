@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Dziennik_elektroniczny
 {
@@ -137,10 +138,12 @@ namespace Dziennik_elektroniczny
                 case 0:
                     this.Width = 575;
                     this.CenterToScreen();
+                    currentSubForm = CurrentSubForm.None;
                     break;
                 case 1:
                     this.Width = 1175;
                     this.CenterToScreen();
+                    currentSubForm = CurrentSubForm.None;
                     break;
                 default:
                     break;
@@ -260,9 +263,15 @@ namespace Dziennik_elektroniczny
             }
         }
 
-        private void OpenBW(object sender, EventArgs e)
+        private void showBW(object sender, EventArgs e)
         {
-            new Formularze.backgroundWorker().Show();
+            Formularze.Plan_zajęć f = new Formularze.Plan_zajęć();
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.TopLevel = false;
+            f.ShowInTaskbar = false;
+            f.Show();
+            f.Dock = DockStyle.Fill;
+            this.panel1.Controls.Add(f); 
         }
     }
 }
