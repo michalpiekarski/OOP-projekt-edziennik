@@ -33,7 +33,7 @@ namespace Dziennik_elektroniczny.Formularze
 
         private void Plan_zajęć_Load(object sender, EventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
+            backgroundWorker1.RunWorkerAsync(); // TO RÓWNIEŻ NIE DZIAŁA (PONAD TO SIĘ OKAZUJE ŻE NAWET NIE JEST TO ZALECANE PRZEZ MICROSOFT)
         }
 
         private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)

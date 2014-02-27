@@ -163,5 +163,9 @@ namespace Dziennik_elektroniczny
                     break;
             }
         }
+        private void ShowBW(object sender, EventArgs e)
+        {
+            new Formularze.Plan_zajęć(this).Show();
+        }
     }
 }

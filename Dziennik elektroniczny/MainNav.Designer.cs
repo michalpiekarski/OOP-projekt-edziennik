@@ -54,6 +54,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.Raportowanie = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Wprowadzanie.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -65,6 +66,7 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.Raportowanie.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -338,12 +340,23 @@
             // 
             // Raportowanie
             // 
+            this.Raportowanie.Controls.Add(this.button16);
             this.Raportowanie.Location = new System.Drawing.Point(4, 22);
             this.Raportowanie.Name = "Raportowanie";
             this.Raportowanie.Size = new System.Drawing.Size(251, 415);
             this.Raportowanie.TabIndex = 2;
             this.Raportowanie.Text = "Raportowanie";
             this.Raportowanie.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(49, 132);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(153, 151);
+            this.button16.TabIndex = 2;
+            this.button16.Text = "button16";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.ShowBW);
             // 
             // MainNav
             // 
@@ -367,6 +380,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            this.Raportowanie.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,6 +413,7 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button16;
 
 
 
