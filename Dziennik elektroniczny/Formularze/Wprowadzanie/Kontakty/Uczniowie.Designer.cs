@@ -309,7 +309,7 @@
             this.uczniowieBindingNavigatorSaveItem.Name = "uczniowieBindingNavigatorSaveItem";
             this.uczniowieBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.uczniowieBindingNavigatorSaveItem.Text = "Save Data";
-            this.uczniowieBindingNavigatorSaveItem.Click += new System.EventHandler(this.uczniowieBindingNavigatorSaveItem_Click_2);
+            this.uczniowieBindingNavigatorSaveItem.Click += new System.EventHandler(this.uczniowieBindingNavigatorSaveItem_Click);
             // 
             // idTextBox
             // 

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dziennik_elektroniczny.Formularze
@@ -33,7 +29,7 @@ namespace Dziennik_elektroniczny.Formularze
                 }
                 else if (filterColumnType.Name == "DateTime")
                 {
-                    // TODO: Wymaga podania poprawnej daty. Trzeba bedzie zastosować podstawianie róznego typu pola wprowadzania dla konkretnych typów kolumn przy filtrowaniu
+                    // UNDONE: Wymaga podania poprawnej daty. Trzeba bedzie zastosować podstawianie róznego typu pola wprowadzania dla konkretnych typów kolumn przy filtrowaniu
                 }
                 else if (filterColumnType.Name == "String")
                 {

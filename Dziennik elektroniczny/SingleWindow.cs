@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dziennik_elektroniczny
@@ -17,7 +10,6 @@ namespace Dziennik_elektroniczny
         {
             InitializeComponent();
         }
-
         private void UczniowieWprowadzanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.UczniowieWprowadzanie)
@@ -33,7 +25,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void NauczycieleWprowadzanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.NauczycieleWprowadzanie)
@@ -49,7 +40,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void PlanZajęćWprowadzanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.PlanZajęćWprowadzanie)
@@ -65,7 +55,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void KartyOcenWprowadzanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.KartyOcenWprowadzanie)
@@ -81,7 +70,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void KlasyWprowadzanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.KlasyWprowadzanie)
@@ -97,7 +85,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void PrzedmiotyWprowadzanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.PrzedmiotyWprowadzanie)
@@ -113,7 +100,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void RodzajePracWprowadzanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.RodzajePracWprowadzanie)
@@ -129,7 +115,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void SetWidth(object sender, EventArgs e)
         {
             switch (tabControl1.SelectedIndex)
@@ -147,7 +132,6 @@ namespace Dziennik_elektroniczny
             }
             panel1.Controls.Clear();
         }
-
         private void UczniowiePrzeglądanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.UczniowiePrzeglądanie)
@@ -163,7 +147,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void NauczycielePrzeglądanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.NauczycielePrzeglądanie)
@@ -179,7 +162,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void PlanZajęćPrzeglądanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.PlanZajęćPrzeglądanie)
@@ -195,7 +177,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void KartyOcenPrzeglądanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.KartyOcenPrzeglądanie)
@@ -211,7 +192,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm);
             }
         }
-
         private void KlasyPrzeglądanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.KlasyPrzeglądanie)
@@ -227,7 +207,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm); 
             }
         }
-
         private void PrzedmiotyPrzeglądanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.PrzedmiotyPrzeglądanie)
@@ -243,7 +222,6 @@ namespace Dziennik_elektroniczny
                 this.panel1.Controls.Add(SubForm); 
             }
         }
-
         private void RodzajePracPrzeglądanieClick(object sender, EventArgs e)
         {
             if (currentSubForm != CurrentSubForm.RodzajePracPrzeglądanie)

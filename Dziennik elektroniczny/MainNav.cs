@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dziennik_elektroniczny
@@ -13,7 +7,6 @@ namespace Dziennik_elektroniczny
     public partial class MainNav : Form
     {
         public bool[] currentSubForm = new bool[20];
-
         public MainNav()
         {
             InitializeComponent();
@@ -22,7 +15,6 @@ namespace Dziennik_elektroniczny
                 currentSubForm[i] = false;
             }
         }
-
         private void UczniowieWprowadzanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.UczniowieWprowadzanie])
@@ -31,7 +23,6 @@ namespace Dziennik_elektroniczny
                 new Uczniowie(this).Show();
             }
         }
-
         private void NauczycieleWprowadzanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.NauczycieleWprowadzanie])
@@ -40,7 +31,6 @@ namespace Dziennik_elektroniczny
                 new Nauczyciele(this).Show();
             }
         }
-
         private void PlanZajęćWprowadzanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.PlanZajęćWprowadzanie])
@@ -49,7 +39,6 @@ namespace Dziennik_elektroniczny
                 new Plan_zajęć(this).Show();
             }
         }
-
         private void KartyOcenWprowadzanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.KartyOcenWprowadzanie])
@@ -58,7 +47,6 @@ namespace Dziennik_elektroniczny
                 new Karty_ocen(this).Show();
             }
         }
-
         private void KlasyWprowadzanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.KlasyWprowadzanie])
@@ -67,7 +55,6 @@ namespace Dziennik_elektroniczny
                 new Klasy(this).Show();
             }
         }
-
         private void PrzedmiotyWprowadzanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.PrzedmiotyWprowadzanie])
@@ -76,7 +63,6 @@ namespace Dziennik_elektroniczny
                 new Przedmioty(this).Show();
             }
         }
-
         private void RodzajePracWprowadzanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.RodzajePracWprowadzanie])
@@ -85,7 +71,6 @@ namespace Dziennik_elektroniczny
                 new Rodzaje_prac(this).Show();
             }
         }
-
         private void UczniowiePrzeglądanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie])
@@ -94,7 +79,6 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Kontakty.Uczniowie(this).Show();
             }
         }
-
         private void NauczycielePrzeglądanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.NauczycielePrzeglądanie])
@@ -103,7 +87,6 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Kontakty.Nauczyciele(this).Show();
             }
         }
-
         private void PlanZajęćPrzeglądanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.PlanZajęćPrzeglądanie])
@@ -112,7 +95,6 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Terminy.Plan_zajęć(this).Show();
             }
         }
-
         private void KartyOcenPrzeglądanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie])
@@ -121,7 +103,6 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Oceny.Karty_ocen(this).Show();
             }
         }
-
         private void KlasyPrzeglądanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie])
@@ -130,7 +111,6 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Inne.Klasy(this).Show();
             }
         }
-
         private void PrzedmiotyPrzeglądanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.PrzedmiotyPrzeglądanie])
@@ -139,7 +119,6 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Inne.Przedmioty(this).Show();
             }
         }
-
         private void RodzajePracPrzeglądanieClick(object sender, EventArgs e)
         {
             if (!currentSubForm[(int)CurrentSubForm.RodzajePracPrzeglądanie])
@@ -148,7 +127,6 @@ namespace Dziennik_elektroniczny
                 new Formularze.Przeglądanie.Inne.Rodzaje_prac(this).Show();
             }
         }
-
         private void DostosujPozycję(object sender, EventArgs e)
         {
             switch (tabControl1.SelectedIndex)
