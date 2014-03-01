@@ -19,33 +19,36 @@ namespace Dziennik_elektroniczny.Formularze
         {
             main = mn;
         }
-        public static void FiltrujTabelę(string filterByText, string filterValueText, ref BindingSource bindingSource, TypedTableBase<DataRow> tabelaDanych) // TODO: Typ TypedTableBase<DataRow> się tutaj nie nadaje
+        public static void FiltrujTabelę(string filterByText, string filterValueText, ref BindingSource bindingSource, DataTable tabelaDanych)
         {
-            Type filterColumnType = typeof(void);
-            foreach (DataColumn col in tabelaDanych.Columns)
+            if (filterValueText != "" && filterByText != "")
             {
-                if (col.ColumnName == filterByText)
+                Type filterColumnType = typeof(void);
+                foreach (DataColumn col in tabelaDanych.Columns)
                 {
-                    filterColumnType = col.DataType;
-                    break;
+                    if (col.ColumnName == filterByText)
+                    {
+                        filterColumnType = col.DataType;
+                        break;
+                    }
                 }
-            }
-            if(filterColumnType == typeof(int) || filterColumnType == typeof(float))
-            {
-                filterByText += " = " + int.Parse(filterValueText);
-            }
-            else if (filterColumnType == typeof(DateTime)) // TODO: Sprawdzić czy ten typ jest pooprawny dla dat
-            {
-            }
-            else if (filterColumnType == typeof(string))
-            {
-                if(filterByText.Contains(" "))
+               if (filterColumnType.Name == typeof(int).Name || filterColumnType.Name == typeof(float).Name)
                 {
-                    filterByText = "[" + filterByText + "]";
+                    filterByText += " = " + int.Parse(filterValueText);
                 }
-                filterByText += " like '" + filterValueText + "'";
+                else if (filterColumnType.Name == typeof(DateTime).Name) // TODO: Sprawdzić czy ten typ jest pooprawny dla dat
+                {
+                }
+                else if (filterColumnType.Name == "String")
+                {
+                    if (filterByText.Contains(" "))
+                    {
+                        filterByText = "[" + filterByText + "]";
+                    }
+                    filterByText += " like '" + filterValueText + "'";
+                }
+                bindingSource.Filter = filterByText;
             }
-            bindingSource.Filter = filterByText;
         }
         public static void ResetujFiltr(ref TextBox filterValue, ref ComboBox filterBy, ref BindingSource bindingSource)
         {
