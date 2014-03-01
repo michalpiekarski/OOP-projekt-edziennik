@@ -32,24 +32,20 @@ namespace Dziennik_elektroniczny.Formularze
                         break;
                     }
                 }
+                if (filterByText.Contains(" "))
+                {
+                    filterByText = "[" + filterByText + "]";
+                }
                if (filterColumnType.Name == "Int32" || filterColumnType.Name == "Double")
                 {
                     filterByText += " = " + int.Parse(filterValueText);
                 }
                 else if (filterColumnType.Name == "DateTime")
                 {
-                    if (filterByText.Contains(" "))
-                    {
-                        filterByText = "[" + filterByText + "]";
-                    }
-                    filterByText += " like '" + filterValueText + "'";
+                    // TODO: Wymaga podania poprawnej daty. Trzeba bedzie zastosować podstawianie róznego typu pola wprowadzania dla konkretnych typów kolumn przy filtrowaniu
                 }
                 else if (filterColumnType.Name == "String")
                 {
-                    if (filterByText.Contains(" "))
-                    {
-                        filterByText = "[" + filterByText + "]";
-                    }
                     filterByText += " like '" + filterValueText + "'";
                 }
                 bindingSource.Filter = filterByText;
