@@ -32,12 +32,17 @@ namespace Dziennik_elektroniczny.Formularze
                         break;
                     }
                 }
-               if (filterColumnType.Name == typeof(int).Name || filterColumnType.Name == typeof(float).Name)
+               if (filterColumnType.Name == "Int32" || filterColumnType.Name == "Double")
                 {
                     filterByText += " = " + int.Parse(filterValueText);
                 }
-                else if (filterColumnType.Name == typeof(DateTime).Name) // TODO: Sprawdzić czy ten typ jest pooprawny dla dat
+                else if (filterColumnType.Name == "DateTime")
                 {
+                    if (filterByText.Contains(" "))
+                    {
+                        filterByText = "[" + filterByText + "]";
+                    }
+                    filterByText += " like '" + filterValueText + "'";
                 }
                 else if (filterColumnType.Name == "String")
                 {

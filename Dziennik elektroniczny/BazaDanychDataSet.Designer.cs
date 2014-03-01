@@ -639,10 +639,10 @@ namespace Dziennik_elektroniczny {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Karty_ocenRow AddKarty_ocenRow(int Id, string Uczeń, string Nauczyciel, string Przedmiot, string Rodzaj_pracy, double Ocena, System.DateTime Data, string Uwagi) {
+            public Karty_ocenRow AddKarty_ocenRow(string Uczeń, string Nauczyciel, string Przedmiot, string Rodzaj_pracy, double Ocena, System.DateTime Data, string Uwagi) {
                 Karty_ocenRow rowKarty_ocenRow = ((Karty_ocenRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Uczeń,
                         Nauczyciel,
                         Przedmiot,
@@ -710,6 +710,7 @@ namespace Dziennik_elektroniczny {
                 base.Columns.Add(this.columnUwagi);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnUczeń.AllowDBNull = false;
@@ -955,10 +956,10 @@ namespace Dziennik_elektroniczny {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KlasyRow AddKlasyRow(int Id, string Klasa, string Wychowawca) {
+            public KlasyRow AddKlasyRow(string Klasa, string Wychowawca) {
                 KlasyRow rowKlasyRow = ((KlasyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Klasa,
                         Wychowawca};
                 rowKlasyRow.ItemArray = columnValuesArray;
@@ -1006,6 +1007,7 @@ namespace Dziennik_elektroniczny {
                 base.Columns.Add(this.columnWychowawca);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnKlasa.AllowDBNull = false;
@@ -1245,10 +1247,10 @@ namespace Dziennik_elektroniczny {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NauczycieleRow AddNauczycieleRow(int Id, string Imię, string Nazwisko) {
+            public NauczycieleRow AddNauczycieleRow(string Imię, string Nazwisko) {
                 NauczycieleRow rowNauczycieleRow = ((NauczycieleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Imię,
                         Nazwisko};
                 rowNauczycieleRow.ItemArray = columnValuesArray;
@@ -1296,6 +1298,7 @@ namespace Dziennik_elektroniczny {
                 base.Columns.Add(this.columnNazwisko);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnImię.AllowDBNull = false;
@@ -1585,10 +1588,10 @@ namespace Dziennik_elektroniczny {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Plan_zajęćRow AddPlan_zajęćRow(int Id, string Klasa, string Przedmiot, string Sala, string Prowadzący, System.DateTime Rozpoczęcie, System.DateTime Zakończenie, string Temat) {
+            public Plan_zajęćRow AddPlan_zajęćRow(string Klasa, string Przedmiot, string Sala, string Prowadzący, System.DateTime Rozpoczęcie, System.DateTime Zakończenie, string Temat) {
                 Plan_zajęćRow rowPlan_zajęćRow = ((Plan_zajęćRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Klasa,
                         Przedmiot,
                         Sala,
@@ -1656,6 +1659,7 @@ namespace Dziennik_elektroniczny {
                 base.Columns.Add(this.columnTemat);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnKlasa.AllowDBNull = false;
@@ -1892,10 +1896,10 @@ namespace Dziennik_elektroniczny {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PrzedmiotyRow AddPrzedmiotyRow(int Id, string Przedmiot) {
+            public PrzedmiotyRow AddPrzedmiotyRow(string Przedmiot) {
                 PrzedmiotyRow rowPrzedmiotyRow = ((PrzedmiotyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Przedmiot};
                 rowPrzedmiotyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrzedmiotyRow);
@@ -1939,6 +1943,7 @@ namespace Dziennik_elektroniczny {
                 base.Columns.Add(this.columnPrzedmiot);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnPrzedmiot.AllowDBNull = false;
@@ -2166,10 +2171,10 @@ namespace Dziennik_elektroniczny {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Rodzaje_pracRow AddRodzaje_pracRow(int Id, string Rodzaj_pracy) {
+            public Rodzaje_pracRow AddRodzaje_pracRow(string Rodzaj_pracy) {
                 Rodzaje_pracRow rowRodzaje_pracRow = ((Rodzaje_pracRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Rodzaj_pracy};
                 rowRodzaje_pracRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRodzaje_pracRow);
@@ -2213,6 +2218,7 @@ namespace Dziennik_elektroniczny {
                 base.Columns.Add(this.columnRodzaj_pracy);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnRodzaj_pracy.AllowDBNull = false;
@@ -2520,10 +2526,10 @@ namespace Dziennik_elektroniczny {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UczniowieRow AddUczniowieRow(int Id, string Imię, string Nazwisko, string PESEL, string Ulica, string Kod_pocztowy, string Miejscowość, string Klasa, string Numer_domu, string Numer_lokalu) {
+            public UczniowieRow AddUczniowieRow(string Imię, string Nazwisko, string PESEL, string Ulica, string Kod_pocztowy, string Miejscowość, string Klasa, string Numer_domu, string Numer_lokalu) {
                 UczniowieRow rowUczniowieRow = ((UczniowieRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Imię,
                         Nazwisko,
                         PESEL,
@@ -2599,6 +2605,7 @@ namespace Dziennik_elektroniczny {
                 base.Columns.Add(this.columnNumer_lokalu);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnImię.AllowDBNull = false;
