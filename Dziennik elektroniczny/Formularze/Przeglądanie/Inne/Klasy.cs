@@ -44,22 +44,24 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
         }
         private void FiltrujTabelę(object sender, EventArgs e)
         {
-            string filterString = filterBy.Text;
-            if(filterString == "Id")
-            {
-                filterString += " = " + int.Parse(filterValue.Text);
-            } else
-            {
-                filterString += " like '" + filterValue.Text + "'";
-            }
-            this.klasyBindingSource.Filter = filterString;
+            //string filterString = filterBy.Text;
+            //if(filterString == "Id")
+            //{
+            //    filterString += " = " + int.Parse(filterValue.Text);
+            //} else
+            //{
+            //    filterString += " like '" + filterValue.Text + "'";
+            //}
+            //this.klasyBindingSource.Filter = filterString;
+            SubForm.FiltrujTabelę(filterBy.Text, filterValue.Text, ref this.klasyBindingSource, this.bazaDanychDataSet.Klasy); // TODO: Wyjaśnienie błędu - patrz definicja metody
         }
 
         private void ResetujFiltr(object sender, EventArgs e)
         {
-            filterValue.Text = "";
-            filterBy.SelectedIndex = -1;
-            this.klasyBindingSource.RemoveFilter();
+            //filterValue.Text = "";
+            //filterBy.SelectedIndex = -1;
+            //this.klasyBindingSource.RemoveFilter();
+            SubForm.ResetujFiltr(ref this.filterValue, ref this.filterBy, ref this.klasyBindingSource);
         }
     }
 }

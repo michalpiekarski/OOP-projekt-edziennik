@@ -106,6 +106,9 @@
     <Compile Include="Formularze\Przeglądanie\Terminy\Plan zajęć.Designer.cs">
       <DependentUpon>Plan zajęć.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularze\SubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainNav.cs">
       <SubType>Form</SubType>
     </Compile>
