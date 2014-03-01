@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +27,7 @@ namespace Dziennik_elektroniczny.Formularze
                 {
                     filterByText = "[" + filterByText + "]";
                 }
-               if (filterColumnType.Name == "Int32" || filterColumnType.Name == "Double")
+                if (filterColumnType.Name == "Int32" || filterColumnType.Name == "Double")
                 {
                     filterByText += " = " + int.Parse(filterValueText);
                 }
@@ -50,7 +48,6 @@ namespace Dziennik_elektroniczny.Formularze
             filterBy.SelectedIndex = -1;
             bindingSource.RemoveFilter();
         }
-
         public static void SygnalizuZamknięcie(ref MainNav main, CurrentSubForm indeks)
         {
             main.currentSubForm[(int)indeks] = false;

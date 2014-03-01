@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
@@ -22,45 +15,27 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
             main = mn;
             InitializeComponent();
         }
-
         private void przedmiotyBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.przedmiotyBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bazaDanychDataSet);
-
         }
-
         private void Przedmioty_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bazaDanychDataSet.Przedmioty' table. You can move, or remove it, as needed.
             this.przedmiotyTableAdapter.Fill(this.bazaDanychDataSet.Przedmioty);
-
         }
-
         private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
         {
-            main.currentSubForm[(int)CurrentSubForm.PrzedmiotyPrzeglądanie] = false;
+            SubForm.SygnalizuZamknięcie(ref main, CurrentSubForm.PrzedmiotyPrzeglądanie);
         }
         private void FiltrujTabelę(object sender, EventArgs e)
         {
-            string filterString = filterBy.Text;
-            if (filterString == "Id")
-            {
-                filterString += " = " + int.Parse(filterValue.Text);
-            }
-            else
-            {
-                filterString += " like '" + filterValue.Text + "'";
-            }
-            this.przedmiotyBindingSource.Filter = filterString;
+            SubForm.FiltrujTabelę(this.filterBy.Text, this.filterValue.Text, ref this.przedmiotyBindingSource, this.bazaDanychDataSet.Przedmioty);
         }
-
         private void ResetujFiltr(object sender, EventArgs e)
         {
-            filterValue.Text = "";
-            filterBy.SelectedIndex = -1;
-            this.przedmiotyBindingSource.RemoveFilter();
+            SubForm.ResetujFiltr(ref this.filterValue, ref this.filterBy, ref this.przedmiotyBindingSource);
         }
     }
 }

@@ -22,31 +22,24 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
             main = mn;
             InitializeComponent();
         }
-
         private void klasyBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.klasyBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bazaDanychDataSet);
-
         }
-
         private void Klasy_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bazaDanychDataSet.Klasy' table. You can move, or remove it, as needed.
             this.klasyTableAdapter.Fill(this.bazaDanychDataSet.Klasy);
-
         }
-
         private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
         {
-            main.currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie] = false;
+            SubForm.SygnalizuZamknięcie(ref main, CurrentSubForm.KlasyPrzeglądanie);
         }
         private void FiltrujTabelę(object sender, EventArgs e)
         {
             SubForm.FiltrujTabelę(filterBy.Text, filterValue.Text, ref this.klasyBindingSource, this.bazaDanychDataSet.Klasy);
         }
-
         private void ResetujFiltr(object sender, EventArgs e)
         {
             SubForm.ResetujFiltr(ref this.filterValue, ref this.filterBy, ref this.klasyBindingSource);

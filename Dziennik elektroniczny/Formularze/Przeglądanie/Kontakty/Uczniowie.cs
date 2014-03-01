@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
@@ -22,49 +15,27 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
             main = mn;
             InitializeComponent();
         }
-
         private void uczniowieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.uczniowieBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bazaDanychDataSet);
-
         }
-
         private void Uczniowie_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bazaDanychDataSet.Uczniowie' table. You can move, or remove it, as needed.
             this.uczniowieTableAdapter.Fill(this.bazaDanychDataSet.Uczniowie);
-
         }
-
         private void SygnalizujZamknięcie(object sender, FormClosedEventArgs e)
         {
-            main.currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie] = false;
+            SubForm.SygnalizuZamknięcie(ref main, CurrentSubForm.UczniowiePrzeglądanie);
         }
         private void FiltrujTabelę(object sender, EventArgs e)
         {
-            string filterString = filterBy.Text;
-            if (filterString == "Id")
-            {
-                filterString += " = " + int.Parse(filterValue.Text);
-            }
-            else
-            {
-                if(filterString == "Numer domu" || filterString == "Numer lokalu" || filterString == "Kod pocztowy")
-                {
-                    filterString = "[" + filterString + "]";
-                }
-                filterString += " like '" + filterValue.Text + "'";
-            }
-            this.uczniowieBindingSource.Filter = filterString;
+            SubForm.FiltrujTabelę(this.filterBy.Text, this.filterValue.Text, ref this.uczniowieBindingSource, this.bazaDanychDataSet.Uczniowie);
         }
-
         private void ResetujFiltr(object sender, EventArgs e)
         {
-            filterValue.Text = "";
-            filterBy.SelectedIndex = -1;
-            this.uczniowieBindingSource.RemoveFilter();
+            SubForm.ResetujFiltr(ref this.filterValue, ref this.filterBy, ref this.uczniowieBindingSource);
         }
     }
 }
