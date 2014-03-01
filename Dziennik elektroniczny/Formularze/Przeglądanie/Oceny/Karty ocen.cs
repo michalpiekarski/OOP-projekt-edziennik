@@ -39,40 +39,16 @@ namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
 
         private void SygnalizuZamknięcie(object sender, FormClosedEventArgs e)
         {
-            main.currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie] = false;
+            //main.currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie] = false;
+            SubForm.SygnalizuZamknięcie(ref main, CurrentSubForm.KartyOcenPrzeglądanie);
         }
         private void FiltrujTabelę(object sender, EventArgs e)
         {
-            //string filterString = filterBy.Text;
-            //if (filterString == "Id")
-            //{
-            //    filterString += " = " + int.Parse(filterValue.Text);
-            //}
-            //else if(filterString == "Ocena")
-            //{
-            //    filterString += " = " + float.Parse(filterValue.Text);
-            //}
-            //else if(filterString == "Data")
-            //{
-            //    // UNDONE: Zdecydować nad zachowaniem w przypadku podjęcia próby filtrowania po dacie
-            //}
-            //else
-            //{
-            //    if(filterString == "Rodzaj pracy")
-            //    {
-            //        filterString = "[" + filterString + "]";
-            //    }
-            //    filterString += " like '" + filterValue.Text + "'";
-            //}
-            //this.karty_ocenBindingSource.Filter = filterString;
             SubForm.FiltrujTabelę(this.filterBy.Text, this.filterValue.Text, ref this.karty_ocenBindingSource, this.bazaDanychDataSet.Karty_ocen);
         }
 
         private void ResetujFiltr(object sender, EventArgs e)
         {
-            //filterValue.Text = "";
-            //filterBy.SelectedIndex = -1;
-            //this.karty_ocenBindingSource.RemoveFilter();
             SubForm.ResetujFiltr(ref this.filterValue, ref this.filterBy, ref this.karty_ocenBindingSource);
         }
     }

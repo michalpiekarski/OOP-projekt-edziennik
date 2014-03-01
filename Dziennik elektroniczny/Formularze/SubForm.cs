@@ -10,15 +10,8 @@ using System.Windows.Forms;
 
 namespace Dziennik_elektroniczny.Formularze
 {
-    public class SubForm : Form
+    public class SubForm
     {
-
-        MainNav main;
-
-        public SubForm(MainNav mn)
-        {
-            main = mn;
-        }
         public static void FiltrujTabelę(string filterByText, string filterValueText, ref BindingSource bindingSource, DataTable tabelaDanych)
         {
             if (filterValueText != "" && filterByText != "")
@@ -56,6 +49,11 @@ namespace Dziennik_elektroniczny.Formularze
             filterValue.Text = "";
             filterBy.SelectedIndex = -1;
             bindingSource.RemoveFilter();
+        }
+
+        public static void SygnalizuZamknięcie(ref MainNav main, CurrentSubForm indeks)
+        {
+            main.currentSubForm[(int)indeks] = false;
         }
     }
 }
