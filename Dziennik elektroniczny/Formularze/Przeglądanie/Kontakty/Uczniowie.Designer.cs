@@ -1,4 +1,4 @@
-﻿namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Kontakty
+﻿namespace Dziennik_elektroniczny.Formularze.Przeglądanie
 {
     partial class Uczniowie
     {

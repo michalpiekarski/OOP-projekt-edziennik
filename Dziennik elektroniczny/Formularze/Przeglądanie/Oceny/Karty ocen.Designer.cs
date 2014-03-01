@@ -1,4 +1,4 @@
-﻿namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Oceny
+﻿namespace Dziennik_elektroniczny.Formularze.Przeglądanie
 {
     partial class Karty_ocen
     {

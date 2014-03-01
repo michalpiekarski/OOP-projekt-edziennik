@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Dziennik_elektroniczny
+namespace Dziennik_elektroniczny.Formularze.Wprowadzanie
 {
     public partial class Plan_zajęć : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace Dziennik_elektroniczny
+﻿namespace Dziennik_elektroniczny.Formularze.Wprowadzanie
 {
     partial class Uczniowie
     {

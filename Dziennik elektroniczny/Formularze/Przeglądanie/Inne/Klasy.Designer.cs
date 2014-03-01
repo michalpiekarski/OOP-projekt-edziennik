@@ -1,4 +1,4 @@
-﻿namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
+﻿namespace Dziennik_elektroniczny.Formularze.Przeglądanie
 {
     partial class Klasy
     {

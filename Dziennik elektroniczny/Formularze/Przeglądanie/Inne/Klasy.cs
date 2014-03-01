@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Inne
+namespace Dziennik_elektroniczny.Formularze.Przeglądanie
 {
     public partial class Klasy : Form
     {

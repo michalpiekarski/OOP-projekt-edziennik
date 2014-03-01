@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Dziennik_elektroniczny.Formularze.Przeglądanie.Terminy
+namespace Dziennik_elektroniczny.Formularze.Przeglądanie
 {
     public partial class Plan_zajęć : Form
     {
