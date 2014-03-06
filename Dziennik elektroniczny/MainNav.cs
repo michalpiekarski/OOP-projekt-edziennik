@@ -17,121 +17,74 @@ namespace Dziennik_elektroniczny
                 currentSubForm[i] = false;
             }
         }
+        private void OpenSubForm<T>(CurrentSubForm subFromType) where T : Form
+        {
+            if (!currentSubForm[(int)subFromType])
+            {
+                currentSubForm[(int)subFromType] = true;
+                T SubForm = Activator.CreateInstance(typeof(T), new[]{this}) as T;
+                SubForm.Show();
+            }
+        }
         #region Wprowadzanie
         private void UczniowieWprowadzanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.UczniowieWprowadzanie])
-            {
-                currentSubForm[(int)CurrentSubForm.UczniowieWprowadzanie] = true;
-                new ForWpro.Uczniowie(this).Show();
-            }
+            OpenSubForm<ForWpro.Uczniowie>(CurrentSubForm.UczniowieWprowadzanie);
         }
         private void NauczycieleWprowadzanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.NauczycieleWprowadzanie])
-            {
-                currentSubForm[(int)CurrentSubForm.NauczycieleWprowadzanie] = true;
-                new ForWpro.Nauczyciele(this).Show();
-            }
+            OpenSubForm<ForWpro.Nauczyciele>(CurrentSubForm.NauczycieleWprowadzanie);
         }
         private void PlanZajęćWprowadzanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.PlanZajęćWprowadzanie])
-            {
-                currentSubForm[(int)CurrentSubForm.PlanZajęćWprowadzanie] = true;
-                new ForWpro.Plan_zajęć(this).Show();
-            }
+            OpenSubForm<ForWpro.Plan_zajęć>(CurrentSubForm.PlanZajęćWprowadzanie);
         }
         private void KartyOcenWprowadzanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.KartyOcenWprowadzanie])
-            {
-                currentSubForm[(int)CurrentSubForm.KartyOcenWprowadzanie] = true;
-                new ForWpro.Karty_ocen(this).Show();
-            }
+            OpenSubForm<ForWpro.Karty_ocen>(CurrentSubForm.KartyOcenWprowadzanie);
         }
         private void KlasyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.KlasyWprowadzanie])
-            {
-                currentSubForm[(int)CurrentSubForm.KlasyWprowadzanie] = true;
-                new ForWpro.Klasy(this).Show();
-            }
+            OpenSubForm<ForWpro.Klasy>(CurrentSubForm.KlasyWprowadzanie);
         }
         private void PrzedmiotyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.PrzedmiotyWprowadzanie])
-            {
-                currentSubForm[(int)CurrentSubForm.PrzedmiotyWprowadzanie] = true;
-                new ForWpro.Przedmioty(this).Show();
-            }
+            OpenSubForm<ForWpro.Przedmioty>(CurrentSubForm.PrzedmiotyWprowadzanie);
         }
         private void RodzajePracWprowadzanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.RodzajePracWprowadzanie])
-            {
-                currentSubForm[(int)CurrentSubForm.RodzajePracWprowadzanie] = true;
-                new ForWpro.Rodzaje_prac(this).Show();
-            }
-        } 
+            OpenSubForm<ForWpro.Rodzaje_prac>(CurrentSubForm.RodzajePracWprowadzanie);
+        }
         #endregion Wprowadzanie
         #region Przeglądanie
         private void UczniowiePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie])
-            {
-                currentSubForm[(int)CurrentSubForm.UczniowiePrzeglądanie] = true;
-                new ForPrze.Uczniowie(this).Show();
-            }
+            OpenSubForm<ForPrze.Uczniowie>(CurrentSubForm.UczniowiePrzeglądanie);
         }
         private void NauczycielePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.NauczycielePrzeglądanie])
-            {
-                currentSubForm[(int)CurrentSubForm.NauczycielePrzeglądanie] = true;
-                new ForPrze.Nauczyciele(this).Show();
-            }
+            OpenSubForm<ForPrze.Nauczyciele>(CurrentSubForm.NauczycielePrzeglądanie);
         }
         private void PlanZajęćPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.PlanZajęćPrzeglądanie])
-            {
-                currentSubForm[(int)CurrentSubForm.PlanZajęćPrzeglądanie] = true;
-                new ForPrze.Plan_zajęć(this).Show();
-            }
+            OpenSubForm<ForPrze.Plan_zajęć>(CurrentSubForm.PlanZajęćPrzeglądanie);
         }
         private void KartyOcenPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie])
-            {
-                currentSubForm[(int)CurrentSubForm.KartyOcenPrzeglądanie] = true;
-                new ForPrze.Karty_ocen(this).Show();
-            }
+            OpenSubForm<ForPrze.Karty_ocen>(CurrentSubForm.KartyOcenPrzeglądanie);
         }
         private void KlasyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie])
-            {
-                currentSubForm[(int)CurrentSubForm.KlasyPrzeglądanie] = true;
-                new ForPrze.Klasy(this).Show();
-            }
+            OpenSubForm<ForPrze.Klasy>(CurrentSubForm.KlasyPrzeglądanie);
         }
         private void PrzedmiotyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.PrzedmiotyPrzeglądanie])
-            {
-                currentSubForm[(int)CurrentSubForm.PrzedmiotyPrzeglądanie] = true;
-                new ForPrze.Przedmioty(this).Show();
-            }
+            OpenSubForm<ForPrze.Przedmioty>(CurrentSubForm.PrzedmiotyPrzeglądanie);
         }
         private void RodzajePracPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (!currentSubForm[(int)CurrentSubForm.RodzajePracPrzeglądanie])
-            {
-                currentSubForm[(int)CurrentSubForm.RodzajePracPrzeglądanie] = true;
-                new ForPrze.Rodzaje_prac(this).Show();
-            }
-        } 
+            OpenSubForm<ForPrze.Rodzaje_prac>(CurrentSubForm.RodzajePracPrzeglądanie);
+        }
         #endregion Przeglądanie
         private void DostosujPozycję(object sender, EventArgs e)
         {
