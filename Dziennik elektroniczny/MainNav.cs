@@ -12,7 +12,7 @@ namespace Dziennik_elektroniczny
         public MainNav()
         {
             InitializeComponent();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < currentSubForm.Length; i++)
             {
                 currentSubForm[i] = false;
             }

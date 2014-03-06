@@ -12,218 +12,79 @@ namespace Dziennik_elektroniczny
         {
             InitializeComponent();
         }
+        private void OpenSubForm<T>(CurrentSubForm subFormType) where T : Form, new()
+        {
+            if (currentSubForm != subFormType)
+            {
+                currentSubForm = subFormType;
+                this.panel1.Controls.Clear();
+                T SubForm = new T();
+                SubForm.FormBorderStyle = FormBorderStyle.None;
+                SubForm.TopLevel = false;
+                SubForm.ShowInTaskbar = false;
+                SubForm.Show();
+                SubForm.Dock = DockStyle.Fill;
+                this.panel1.Controls.Add(SubForm);
+            }
+        }
         #region Wprowadzanie
         private void UczniowieWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.UczniowieWprowadzanie)
-            {
-                currentSubForm = CurrentSubForm.UczniowieWprowadzanie;
-                this.panel1.Controls.Clear();
-                ForWpro.Uczniowie SubForm = new ForWpro.Uczniowie();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForWpro.Uczniowie>(CurrentSubForm.UczniowieWprowadzanie);
         }
         private void NauczycieleWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.NauczycieleWprowadzanie)
-            {
-                currentSubForm = CurrentSubForm.NauczycieleWprowadzanie;
-                this.panel1.Controls.Clear();
-                ForWpro.Nauczyciele SubForm = new ForWpro.Nauczyciele();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForWpro.Nauczyciele>(CurrentSubForm.NauczycieleWprowadzanie);
         }
         private void PlanZajęćWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PlanZajęćWprowadzanie)
-            {
-                currentSubForm = CurrentSubForm.PlanZajęćWprowadzanie;
-                this.panel1.Controls.Clear();
-                ForWpro.Plan_zajęć SubForm = new ForWpro.Plan_zajęć();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForWpro.Plan_zajęć>(CurrentSubForm.PlanZajęćWprowadzanie);
         }
         private void KartyOcenWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KartyOcenWprowadzanie)
-            {
-                currentSubForm = CurrentSubForm.KartyOcenWprowadzanie;
-                this.panel1.Controls.Clear();
-                ForWpro.Karty_ocen SubForm = new ForWpro.Karty_ocen();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForWpro.Karty_ocen>(CurrentSubForm.KartyOcenWprowadzanie);
         }
         private void KlasyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KlasyWprowadzanie)
-            {
-                currentSubForm = CurrentSubForm.KlasyWprowadzanie;
-                this.panel1.Controls.Clear();
-                ForWpro.Klasy SubForm = new ForWpro.Klasy();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForWpro.Klasy>(CurrentSubForm.KlasyWprowadzanie);
         }
         private void PrzedmiotyWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PrzedmiotyWprowadzanie)
-            {
-                currentSubForm = CurrentSubForm.PrzedmiotyWprowadzanie;
-                this.panel1.Controls.Clear();
-                ForWpro.Przedmioty SubForm = new ForWpro.Przedmioty();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForWpro.Przedmioty>(CurrentSubForm.PrzedmiotyWprowadzanie);
         }
         private void RodzajePracWprowadzanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.RodzajePracWprowadzanie)
-            {
-                currentSubForm = CurrentSubForm.RodzajePracWprowadzanie;
-                this.panel1.Controls.Clear();
-                ForWpro.Rodzaje_prac SubForm = new ForWpro.Rodzaje_prac();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForWpro.Rodzaje_prac>(CurrentSubForm.RodzajePracWprowadzanie);
         } 
         #endregion Wprowadzanie
         #region Przeglądanie
         private void UczniowiePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.UczniowiePrzeglądanie)
-            {
-                currentSubForm = CurrentSubForm.UczniowiePrzeglądanie;
-                this.panel1.Controls.Clear();
-                ForPrze.Uczniowie SubForm = new ForPrze.Uczniowie();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForPrze.Uczniowie>(CurrentSubForm.UczniowiePrzeglądanie);
         }
         private void NauczycielePrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.NauczycielePrzeglądanie)
-            {
-                currentSubForm = CurrentSubForm.NauczycielePrzeglądanie;
-                this.panel1.Controls.Clear();
-                ForPrze.Nauczyciele SubForm = new ForPrze.Nauczyciele();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForPrze.Nauczyciele>(CurrentSubForm.NauczycielePrzeglądanie);
         }
         private void PlanZajęćPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PlanZajęćPrzeglądanie)
-            {
-                currentSubForm = CurrentSubForm.PlanZajęćPrzeglądanie;
-                this.panel1.Controls.Clear();
-                ForPrze.Plan_zajęć SubForm = new ForPrze.Plan_zajęć();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForPrze.Plan_zajęć>(CurrentSubForm.PlanZajęćPrzeglądanie);
         }
         private void KartyOcenPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KartyOcenPrzeglądanie)
-            {
-                currentSubForm = CurrentSubForm.KartyOcenPrzeglądanie;
-                this.panel1.Controls.Clear();
-                ForPrze.Karty_ocen SubForm = new ForPrze.Karty_ocen();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForPrze.Karty_ocen>(CurrentSubForm.KartyOcenPrzeglądanie);
         }
         private void KlasyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.KlasyPrzeglądanie)
-            {
-                currentSubForm = CurrentSubForm.KlasyPrzeglądanie;
-                this.panel1.Controls.Clear();
-                ForPrze.Klasy SubForm = new ForPrze.Klasy();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForPrze.Klasy>(CurrentSubForm.KlasyPrzeglądanie);
         }
         private void PrzedmiotyPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.PrzedmiotyPrzeglądanie)
-            {
-                currentSubForm = CurrentSubForm.PrzedmiotyPrzeglądanie;
-                this.panel1.Controls.Clear();
-                ForPrze.Przedmioty SubForm = new ForPrze.Przedmioty();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForPrze.Przedmioty>(CurrentSubForm.PrzedmiotyPrzeglądanie);
         }
         private void RodzajePracPrzeglądanieClick(object sender, EventArgs e)
         {
-            if (currentSubForm != CurrentSubForm.RodzajePracPrzeglądanie)
-            {
-                currentSubForm = CurrentSubForm.RodzajePracPrzeglądanie;
-                this.panel1.Controls.Clear();
-                ForPrze.Rodzaje_prac SubForm = new ForPrze.Rodzaje_prac();
-                SubForm.FormBorderStyle = FormBorderStyle.None;
-                SubForm.TopLevel = false;
-                SubForm.ShowInTaskbar = false;
-                SubForm.Show();
-                SubForm.Dock = DockStyle.Fill;
-                this.panel1.Controls.Add(SubForm);
-            }
+            OpenSubForm<ForPrze.Rodzaje_prac>(CurrentSubForm.RodzajePracPrzeglądanie);
         }
         #endregion Przeglądanie
         private void SetWidth(object sender, EventArgs e)
