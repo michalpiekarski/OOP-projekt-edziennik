@@ -5,6 +5,7 @@ namespace Dziennik_elektroniczny
 {
     using ForWpro = Formularze.Wprowadzanie;
     using ForPrze = Formularze.Przeglądanie;
+    // using ForRap = Formularze.Raportowanie; // TODO Usunąć komentarz po dodaniu podformularzy dla raportowania
     public partial class SingleWindow : Form
     {
         private CurrentSubForm currentSubForm = CurrentSubForm.None;
@@ -87,6 +88,9 @@ namespace Dziennik_elektroniczny
             OpenSubForm<ForPrze.Rodzaje_prac>(CurrentSubForm.RodzajePracPrzeglądanie);
         }
         #endregion Przeglądanie
+        #region Raportowanie
+        // TODO Zaimplementować funkcjonalność dla przycisków w sekcji raportowanie
+        #endregion Raportowanie
         private void SetWidth(object sender, EventArgs e)
         {
             switch (tabControl1.SelectedIndex)

@@ -54,6 +54,10 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.Raportowanie = new System.Windows.Forms.TabPage();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.Wprowadzanie.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -65,6 +69,8 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.Raportowanie.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -338,12 +344,52 @@
             // 
             // Raportowanie
             // 
+            this.Raportowanie.Controls.Add(this.groupBox9);
             this.Raportowanie.Location = new System.Drawing.Point(4, 22);
             this.Raportowanie.Name = "Raportowanie";
             this.Raportowanie.Size = new System.Drawing.Size(251, 415);
             this.Raportowanie.TabIndex = 2;
             this.Raportowanie.Text = "Raportowanie";
             this.Raportowanie.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(6, 19);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(223, 49);
+            this.button15.TabIndex = 0;
+            this.button15.Text = "Raport dla Ucznia";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(6, 74);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(223, 49);
+            this.button16.TabIndex = 1;
+            this.button16.Text = "Raport dla Klasy";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(6, 129);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(223, 49);
+            this.button17.TabIndex = 2;
+            this.button17.Text = "Raport dla Nauczyciela";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.button15);
+            this.groupBox9.Controls.Add(this.button17);
+            this.groupBox9.Controls.Add(this.button16);
+            this.groupBox9.Location = new System.Drawing.Point(8, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(235, 183);
+            this.groupBox9.TabIndex = 3;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Raporty";
             // 
             // MainNav
             // 
@@ -367,6 +413,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            this.Raportowanie.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,6 +447,10 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button16;
 
 
 

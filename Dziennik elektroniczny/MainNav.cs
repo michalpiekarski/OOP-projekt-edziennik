@@ -6,9 +6,10 @@ namespace Dziennik_elektroniczny
 {
     using ForWpro = Formularze.Wprowadzanie;
     using ForPrze = Formularze.Przeglądanie;
+    // using ForRap = Formularze.Raportowanie; // TODO Usunąć komentarz po dodaniu podformularzy dla raportowania
     public partial class MainNav : Form
     {
-        public bool[] currentSubForm = new bool[20];
+        public bool[] currentSubForm = new bool[23];
         public MainNav()
         {
             InitializeComponent();
@@ -86,6 +87,9 @@ namespace Dziennik_elektroniczny
             OpenSubForm<ForPrze.Rodzaje_prac>(CurrentSubForm.RodzajePracPrzeglądanie);
         }
         #endregion Przeglądanie
+        #region Raportowanie
+        // TODO Zaimplementować funkcjonalność dla przycisków w sekcji raportowanie
+        #endregion Raportowanie
         private void DostosujPozycję(object sender, EventArgs e)
         {
             switch (tabControl1.SelectedIndex)

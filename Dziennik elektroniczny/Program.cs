@@ -22,7 +22,10 @@ namespace Dziennik_elektroniczny
         KartyOcenPrzeglądanie,
         KlasyPrzeglądanie,
         PrzedmiotyPrzeglądanie,
-        RodzajePracPrzeglądanie
+        RodzajePracPrzeglądanie,
+        RaportDlaUcznia,
+        RaportDlaKlasy,
+        RaportDlaNauczyciela
     }
     static class Program
     {
